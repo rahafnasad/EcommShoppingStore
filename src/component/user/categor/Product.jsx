@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery} from 'react-query';
-import ReactImageMagnify from 'react-image-magnify';
 import { CartContext } from '../contex/Cart';
 import { UserContext } from '../contex/User';
 
@@ -37,21 +36,9 @@ export default function Product() {
         {
             data.subImages.map((image)=>
             <div className="image mt-3" key={image._id}>           
+            <img src={image.secure_url} alt="" />
             
-            
-            <ReactImageMagnify {...{
-    smallImage: {
-        alt: 'Wristwatch by Ted Baker London',
-        isFluidWidth: true,
-        src: image.secure_url
-    },
-    largeImage: {
-        src: image.secure_url,
-        width: 2200,
-        height: 1800
-    },
-    isHintEnabled:true,
-}} />
+
             
             
             </div>
