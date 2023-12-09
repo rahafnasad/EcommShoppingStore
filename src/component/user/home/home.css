@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,500;1,100;1,200;1,400&display=swap');
+
+.Container{
+    margin: 15px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.overlay-Footer{
+    background: rgba(0, 0, 0, 0.93);
+
+}
+.des ,.titel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.des{
+    top: 100px;
+
+}
+.titel h1{
+    font-size: 50px;
+    font-family: 'Nova Square', sans-serif;
+    font-weight: 700;
+
+}
+.des p{
+    font-family: 'Raleway', sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 34px;
+    text-align: center;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid #333;
+    animation: typing 7s;
+-webkit-animation: typing 7s infinite alternate-reverse steps(81);
+
+
+
+}
+@keyframes typing {
+    from{
+        width: 0;
+    }
+    to{
+        width: 80%;
+    }
+}
+.bg{
+    background: url(../../../../public/d.jpg);
+}
+.home{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+}
+.home div{
+    height: 200px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.home div:nth-child(1){
+    grid-column: 1/3;
+}
+.home div:nth-child(7){
+    grid-column:2/4;
+}

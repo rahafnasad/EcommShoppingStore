@@ -1,0 +1,117 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,500;1,100;1,200;1,400&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+   
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #d3d3d3,#adadad,#464646);
+    font-family: 'Montserrat', sans-serif;
+
+
+    
+}
+.Container{
+    margin: 15px;
+    padding: 0;
+    overflow: hidden;
+}
+h1{
+    font-size: 50px;
+    font-family: 'Nova Square', sans-serif;
+    font-weight: 700;
+}
+
+.swiper{
+    margin-top: 50px ;
+    
+}
+
+.swiper-button-next ,.swiper-button-prev{
+    background-color: rgb(102, 102, 102);
+    color: black !important;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+}
+.swiper-button-next:after ,.swiper-button-prev:after{
+  font-size: 20px !important;
+}
+.swiper-pagination-bullet{
+     background-color: black !important;
+}
+.swiper-sustom{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.catrg{
+    background-color: rgba(107, 107, 107, 0.5);
+padding-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.titelee hr{
+    width: 50px;
+    text-align: center;
+}
+.titelee span{
+   border-color: rgb(107, 29, 86) !important;
+   font-size: 50px;
+   font-family: 'Nova Square', sans-serif;
+   font-weight: 700;
+}
+.titelee  p {
+    font-size: 20px;
+}
+.product img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+.products{
+    background-color: rgba(209, 209, 209, 0.3);
+    border-radius: 5px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.product h2{
+    font-size: 20px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+.product span {
+    font-weight: 500;
+    color: #000000;
+}
+.product a {
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Nova Square', sans-serif;
+    color: rgb(94, 35, 35);
+    font-weight: 700;
+}
+.image img {
+    width: 200px;
+    height: 250px;
+}
+.detalis span  {
+font-weight: 900;
+}
+.detalis h1{
+    font-weight: 400;
+    font-size: 35px;
+
+}
+.detalis h2{
+    font-size: 25px;
+
+}
+.detalis button{
+    align-items: center;
+width: 30%;}

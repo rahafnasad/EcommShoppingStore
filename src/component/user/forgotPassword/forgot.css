@@ -1,0 +1,14 @@
+.formCode{
+    width: 50%;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow:  5px 20px 50px #000;
+    margin-top: 100px;
+    padding: 20px;
+    background: url('../../../../public/1024.jpg') no-repeat center / cover;
+
+}
+.formCode p {
+text-align: center;
+color: aliceblue;}
