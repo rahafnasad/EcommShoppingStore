@@ -4,17 +4,9 @@ import { toast } from "react-toastify";
 
 export const CartContext = createContext(null);
 export function CartContextProvider({ children }) {
+  const[total,setTotal]=useState(0);
   const [count,setCount]=useState(0);
-  const getProfileInfoContect = async () => {
-    const token = localStorage.getItem("userToken");
 
-    const { data } = await axios.get(
-      `${import.meta.env.VITE_API_URL}/user/profile`,
-      { headers: { Authorization: `Tariq__${token}` } }
-    );
-
-    return data.user;
-  };
   const AddToCartContext = async (productId) => {
     try {
       const token = localStorage.getItem("userToken");
@@ -51,7 +43,6 @@ export function CartContextProvider({ children }) {
         headers: { Authorization: `Tariq__${token}` },
       });
       setCount(data.count);
-      console.log(count);
       return data;
     } catch (error) {
       console.log(error);
@@ -91,8 +82,9 @@ export function CartContextProvider({ children }) {
         AddToCartContext,
         getItemsContext,
         removeItemsContsext,
-        getProfileInfoContect,
         setCount,
+        total,
+        setTotal,
       }}
     >
       {children}

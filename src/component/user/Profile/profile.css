@@ -1,24 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
-.profile-info{
-    width: 50%;
-    margin: auto;
-    box-shadow:  5px 20px 50px #000;
-    margin-top: 100px;
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100;1,400&display=swap');
+.Profile{
+    display: flex;
+    gap: 30px;
+    height: 100;
+}
+.profileLink nav{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    gap: 20px;
+    width: 300px;
+    align-items: center;
+    margin: 10px;
+    border-radius: 5px;
 
 }
-.profilePhoto img {
-    border-radius: 10%;
-    width: 250px;
-    height: 250px;
+.profileLink nav a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #333;
+text-align: center;
+margin-top: 10px;
+font-size: 20px;
 }
-.profile-info span {
-    font-weight: 700;
-    font-family: 'Oswald', sans-serif;
-    font-size: 27px;
-    letter-spacing: 1px;
-
-}
-.profile-info p {
-    font-family: 'Oswald', sans-serif;
-font-size: 25px;}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px;
+  }
+  h3{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  
+  td, th {
+    border: 1px solid #333;
+    text-align: left;
+    padding: 8px;
+    padding-left: 20px;
+    
+  }

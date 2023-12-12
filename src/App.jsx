@@ -14,6 +14,7 @@ import { jwtDecode } from "jwt-decode";
 import CategoryDetails from "./component/user/categor/CategoryDetails.jsx";
 import Product from "./component/user/categor/Product.jsx";
 import {
+ 
   CartContext,
   CartContextProvider,
 } from "./component/user/contex/Cart.jsx";
@@ -26,15 +27,19 @@ import UserContextProvider, {
 } from "./component/user/contex/User.jsx";
 import ProtectedRoute from "./component/user/ProtectedRoute/ProtectedRoute.jsx";
 import Autho from "./component/user/ProtectedRoute/Autho.jsx";
+import CreateOrder from "./component/user/order/CreateOrder.jsx";
+import ProfileInfo from "./component/user/Profile/ProfileInfo.jsx";
+import ProfileContact from './component/user/Profile/ProfileContact.jsx'
+import GetOrder from "./component/user/Profile/GetOrder.jsx";
 
 export default function App() {
   let { setUserToken } = useContext(UserContext);
-  let { getItemsContext, setCount } = useContext(CartContext);
+  let {getItemsContext,setCount}=useContext(CartContext);
 
   useEffect(() => {
     if (localStorage.getItem("userToken") != null) {
       setUserToken(localStorage.getItem("userToken"));
-      setCount(getItemsContext.count);
+      setCount(getItemsContext().count);
     }
   }, []);
 
@@ -72,6 +77,24 @@ export default function App() {
         {
           path: "profile",
           element: <Profile />,
+          children:[
+            {
+              index:"true",
+              element: <ProfileInfo />,
+            },  {
+              path: "contact",
+              element: <ProfileContact />,
+            },
+            {
+              path: "order",
+              element: <GetOrder />,
+            },
+
+          ]
+        },
+        {
+          path: "createOrder",
+          element: <CreateOrder />,
         },
         {
           path: "login",

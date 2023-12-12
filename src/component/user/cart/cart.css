@@ -316,3 +316,18 @@ footer .logo a {
     background-color:transparent;
     
 }
+.clearCart{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: red !important;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 900;
+    width: 20%;
+}
+.clearcart{
+    display: flex;
+   justify-content: center;
+
+}

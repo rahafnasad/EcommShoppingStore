@@ -19,13 +19,11 @@ export default function ForgotePasswors() {
   const email = users.email;
   const password = users.password;
   const code = users.code;
-  console.log(code);
   const { data } = await axios.patch(
     `${import.meta.env.VITE_API_URL}/auth/forgotPassword`,
     users
   );
 
-  console.log(data);
   if ((data.message = "success")) {
     toast.success("The password has been updated successfully", {
       position: "top-right",

@@ -3,11 +3,74 @@ import './cart.css'
 import { useQuery } from 'react-query';
 import { CartContext } from '../contex/Cart';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { UserContext } from '../contex/User';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 export default function Cart() {
-  const {getItemsContext}=useContext(CartContext);
+  const {userToken:token}=useContext(UserContext);
+  const {getItemsContext,total,setTotal}=useContext(CartContext);
     const {SetCart}=useContext(CartContext);
-
+    const navigate=useNavigate();
+const toOrder= ()=>{
+  navigate('/createOrder');
+}
   const {removeItemsContsext} =useContext(CartContext);
+  const increaseProduct=async(productId)=>{
+  try{
+    const { data } = await axios.patch(
+      `${import.meta.env.VITE_API_URL}/cart/incraseQuantity`,{productId},
+      { headers: { Authorization: `Tariq__${token}` } }
+    );
+    return data;
+  }
+  catch(error){
+    console.log(error);
+  }
+
+
+  }  
+  const decreaseProduct=async(productId)=>{
+    try{
+      const { data } = await axios.patch(
+        `${import.meta.env.VITE_API_URL}/cart/decraseQuantity`,{productId},
+        { headers: { Authorization: `Tariq__${token}` } }
+      );
+      return data;
+    }
+    catch(error){
+      console.log(error);
+    }
+  
+  
+    }
+  const clearCart=async ()=>{
+
+    try{
+      const { data } = await axios.patch(
+        `${import.meta.env.VITE_API_URL}/cart/clear`,{},
+        { headers: { Authorization: `Tariq__${token}` } }
+      );
+      if ((data.message = "success")) {
+  
+        toast.success("Cart Cleared sucessfuly", {
+          position: "top-right",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+      return data;
+    }
+    catch(error){
+      console.log(error);
+    }
+
+  }
   const getItems=async()=>{
     const res =getItemsContext();
     return res;
@@ -45,6 +108,7 @@ return res;
               </div>
 {data?.products? (data.products.map((product)=>
  <div className="item">
+
  <div className="product-info">
    <img src={product.details.mainImage.secure_url}/>
    <div className="product-details">
@@ -70,7 +134,7 @@ return res;
    </div>
  </div>
  <div className="quantity">
-   <button>
+   <button onClick={()=>decreaseProduct(product.details._id)}>
      <svg
        xmlns="http://www.w3.org/2000/svg"
        width={16}
@@ -87,8 +151,8 @@ return res;
        />
      </svg>
    </button>
-   <span>1</span>
-   <button>
+   <span>{product.quantity}</span>
+   <button onClick={()=>increaseProduct(product.details._id)}>
      <svg
        xmlns="http://www.w3.org/2000/svg"
        width={16}
@@ -108,7 +172,6 @@ return res;
  <div className="price">${product.details.price}</div>
  <div className="subtotal">${product.details.price*product.quantity}</div>
 
-
 </div>
 
 
@@ -119,8 +182,10 @@ return res;
 :
 <h2>No Product In Cart</h2>
 }
+<div className="clearcart">
+<button className='clearCart' onClick={clearCart}>clear cart</button>       
 
-             
+</div>
 
 
               
@@ -158,7 +223,7 @@ return res;
                   <span>$1345.00</span>
                 </div>
                 <div className="checkout">
-                  <a href="#">Chekout</a>
+                  <a href="#" onClick={toOrder}>Chekout</a>
                 </div>
               </div>
             </div>

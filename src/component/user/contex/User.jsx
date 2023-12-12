@@ -24,7 +24,7 @@ export default function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ userToken, setUserToken, userData, setUserData }}
+      value={{ userToken, setUserToken, userData, setUserData,loader }}
     >
       {children}
     </UserContext.Provider>

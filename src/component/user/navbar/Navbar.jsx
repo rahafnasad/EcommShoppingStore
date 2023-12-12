@@ -6,8 +6,14 @@ import { useQuery } from "react-query";
 import logo from "../../../../public/logo.png";
 import { UserContext } from "../contex/User";
 export default function Navbar() {
-  let { userToken,setUserToken,userData,setUserData } = useContext(UserContext);
-  console.log(userData);
+  let { userToken,setUserToken,userData,setUserData ,loader } = useContext(UserContext);
+  if(loader){
+    
+    return <div className="spinner-border" role="status">
+    <span className="sr-only">Loading...</span>
+  </div>
+  
+  }
   let navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("userToken");
@@ -15,7 +21,7 @@ export default function Navbar() {
     setUserData(null);
     navigate("/");
   };
-  const { count } = useContext(CartContext);
+  let { count } = useContext(CartContext);
  // const { getProfileInfoContect } = useContext(CartContext);
 
  // const { data, isLoading } = useQuery("profileInfo", getProfileInfoContect);
@@ -89,7 +95,8 @@ export default function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                   
+                   {userData.userName}
+                   <img src={userData.image.secure_url} />
                   </a>
                 }
 

@@ -50,8 +50,7 @@ if(isLoading){
       el:'.swiper-sustom' }}
       loop={true}
       autoplay={{delay:1500}}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+    
     >
       {data?.categories.length?data?.categories.map((category)=>
 
