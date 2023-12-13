@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './cart.css'
 import { useQuery } from 'react-query';
 import { CartContext } from '../contex/Cart';
@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 export default function Cart() {
   const {userToken:token}=useContext(UserContext);
+  const [loding,setLoding]=useState(false);
+
   const {getItemsContext,total,setTotal}=useContext(CartContext);
     const {SetCart}=useContext(CartContext);
     const navigate=useNavigate();
@@ -18,10 +20,13 @@ const toOrder= ()=>{
   const {removeItemsContsext} =useContext(CartContext);
   const increaseProduct=async(productId)=>{
   try{
+    setLoding(true);
+
     const { data } = await axios.patch(
       `${import.meta.env.VITE_API_URL}/cart/incraseQuantity`,{productId},
       { headers: { Authorization: `Tariq__${token}` } }
     );
+    setLoding(false);
     return data;
   }
   catch(error){
@@ -32,10 +37,12 @@ const toOrder= ()=>{
   }  
   const decreaseProduct=async(productId)=>{
     try{
+      setLoding(true);
       const { data } = await axios.patch(
         `${import.meta.env.VITE_API_URL}/cart/decraseQuantity`,{productId},
         { headers: { Authorization: `Tariq__${token}` } }
       );
+      setLoding(false);
       return data;
     }
     catch(error){
@@ -47,6 +54,8 @@ const toOrder= ()=>{
   const clearCart=async ()=>{
 
     try{
+      setLoding(true);
+
       const { data } = await axios.patch(
         `${import.meta.env.VITE_API_URL}/cart/clear`,{},
         { headers: { Authorization: `Tariq__${token}` } }
@@ -64,6 +73,8 @@ const toOrder= ()=>{
           theme: "dark",
         });
       }
+      setLoding(false);
+
       return data;
     }
     catch(error){
@@ -80,6 +91,11 @@ const res= await removeItemsContsext(productId);
 return res;
   }
   const {data,isLoading}=useQuery("getItem",getItems);
+  if (loding){
+    return <div className="spinner-border" role="status">
+    <span className="sr-only">Loading...</span>
+  </div>
+  }
   if(isLoading){
     return <div className="spinner-border" role="status">
     <span className="sr-only">Loading...</span>

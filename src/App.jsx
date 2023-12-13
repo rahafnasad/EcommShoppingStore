@@ -34,12 +34,12 @@ import GetOrder from "./component/user/Profile/GetOrder.jsx";
 
 export default function App() {
   let { setUserToken } = useContext(UserContext);
-  let {getItemsContext,setCount}=useContext(CartContext);
+  //let {getItemsContext,setCount}=useContext(CartContext);
 
   useEffect(() => {
     if (localStorage.getItem("userToken") != null) {
       setUserToken(localStorage.getItem("userToken"));
-      setCount(getItemsContext().count);
+    //  setCount(getItemsContext().count);
     }
   }, []);
 
