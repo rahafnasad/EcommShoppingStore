@@ -7,7 +7,7 @@ import logo from "../../../../public/logo.png";
 import { UserContext } from "../contex/User";
 export default function Navbar() {
   let { userToken,setUserToken,userData,setUserData ,loader } = useContext(UserContext);
-  if(loader){
+  if(loader&&userToken){
     
     return <div className="spinner-border" role="status">
     <span className="sr-only">Loading...</span>
