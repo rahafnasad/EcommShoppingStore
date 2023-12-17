@@ -72,6 +72,31 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(3,1fr);
+
+}
+.imgHome{
+    position: absolute;
+    bottom: 0;
+    left: 380px;
+
+}
+.imgHome img {
+    width: 145%;
+}
+.myHome{
+    position: relative;
+border:1px solid #333 ;
+
+}
+.myHome .titel H1{
+    font-size: 150px;
+    position: absolute;
+    top: 260px;
+    letter-spacing: 4px;
+}
+.myHome .titel , .myHome .des{
+
+
 }
 .home div{
     height: 200px;

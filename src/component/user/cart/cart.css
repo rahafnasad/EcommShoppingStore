@@ -331,3 +331,6 @@ footer .logo a {
    justify-content: center;
 
 }
+.RemoveItem:hover , .decreseProduct:hover,.increaseProduct:hover{
+cursor: pointer;
+}

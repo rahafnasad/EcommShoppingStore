@@ -7,10 +7,10 @@ export default function Home() {
 
 <>
 
-<div className="Container">
+<div className=" myHome">
   <div className="overlay"></div>
   <div className="titel">
-  <h1>Welcome to Rahaf Store</h1>
+  <h1>RAHAF STORE</h1>
   </div>
   <div className="des">
 <p>Welcome to the best online shopping store. We have all the supplies you may need</p>
@@ -23,9 +23,15 @@ export default function Home() {
   <div className="bg"></div>
   <div className="bg"></div>
   <div className="bg"></div>
+
+  <div className="bg"></div>
+  <div className="bg"></div>
+  <div className="bg"></div>
   <div className="bg"></div>
 </div>
-
+<div className="imgHome">
+  <img src="l.png" alt="" />
+</div>
 
 
 </div>

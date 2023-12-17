@@ -10,10 +10,18 @@ import { useNavigate } from 'react-router-dom';
 export default function Cart() {
   const {userToken:token}=useContext(UserContext);
   const [loding,setLoding]=useState(false);
+  const [product,setProduct]=useState([]);
 
-  const {getItemsContext,total,setTotal}=useContext(CartContext);
-    const {SetCart}=useContext(CartContext);
+  const {getItemsContext}=useContext(CartContext);
     const navigate=useNavigate();
+    const getItems=async()=>{
+      const res = await getItemsContext();
+      console.log(res)
+
+
+      setProduct(res);
+      setLoding(false)
+    }
 const toOrder= ()=>{
   navigate('/createOrder');
 }
@@ -27,6 +35,7 @@ const toOrder= ()=>{
       { headers: { Authorization: `Tariq__${token}` } }
     );
     setLoding(false);
+    getItems();
     return data;
   }
   catch(error){
@@ -43,6 +52,7 @@ const toOrder= ()=>{
         { headers: { Authorization: `Tariq__${token}` } }
       );
       setLoding(false);
+      getItems()
       return data;
     }
     catch(error){
@@ -74,7 +84,7 @@ const toOrder= ()=>{
         });
       }
       setLoding(false);
-
+      getItems();
       return data;
     }
     catch(error){
@@ -82,21 +92,21 @@ const toOrder= ()=>{
     }
 
   }
-  const getItems=async()=>{
-    const res =getItemsContext();
-    return res;
-  }
+ 
   const removeItem=async(productId)=>{
+    setLoding(true)
 const res= await removeItemsContsext(productId);
+getItems()
+loding(false)
 return res;
   }
-  const {data,isLoading}=useQuery("getItem",getItems);
-  if (loding){
-    return <div className="spinner-border" role="status">
-    <span className="sr-only">Loading...</span>
-  </div>
-  }
-  if(isLoading){
+  //const {data,isLoading}=useQuery("getItem",getItems);
+  useEffect(()=>{
+    setLoding(true);
+
+    getItems()},[])
+
+  if(loding){
     return <div className="spinner-border" role="status">
     <span className="sr-only">Loading...</span>
   </div>
@@ -122,7 +132,7 @@ return res;
                 </div>
                
               </div>
-{data?.products? (data.products.map((product)=>
+{product?.products? (product.products.map((product)=>
  <div className="item">
 
  <div className="product-info">
@@ -130,7 +140,7 @@ return res;
    <div className="product-details">
      <h2> {product.details.name}</h2>
      <span>Color:black</span>
-     <a href="#" onClick={()=>removeItem(product.details._id)}>
+     <a href="#" onClick={()=>removeItem(product.details._id)} className='RemoveItem'>
        <svg
          xmlns="http://www.w3.org/2000/svg"
          width={24}
@@ -150,7 +160,7 @@ return res;
    </div>
  </div>
  <div className="quantity">
-   <button onClick={()=>decreaseProduct(product.details._id)}>
+   <button onClick={()=>decreaseProduct(product.details._id)} className='decreseProduct'>
      <svg
        xmlns="http://www.w3.org/2000/svg"
        width={16}
@@ -167,8 +177,8 @@ return res;
        />
      </svg>
    </button>
-   <span>{product.quantity}</span>
-   <button onClick={()=>increaseProduct(product.details._id)}>
+   <span>{product.quantity>0?product.quantity:removeItem(product.details._id)}</span>
+   <button onClick={()=>increaseProduct(product.details._id)} className='increaseProduct'>
      <svg
        xmlns="http://www.w3.org/2000/svg"
        width={16}

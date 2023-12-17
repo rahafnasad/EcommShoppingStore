@@ -31,15 +31,17 @@ import CreateOrder from "./component/user/order/CreateOrder.jsx";
 import ProfileInfo from "./component/user/Profile/ProfileInfo.jsx";
 import ProfileContact from './component/user/Profile/ProfileContact.jsx'
 import GetOrder from "./component/user/Profile/GetOrder.jsx";
+import AllProducts from "./component/user/categor/AllProducts.jsx";
+import ProductPage from "./component/user/categor/ProductPage.jsx";
 
 export default function App() {
   let { setUserToken } = useContext(UserContext);
-  //let {getItemsContext,setCount}=useContext(CartContext);
+  let {getItemsContext,setCount}=useContext(CartContext);
 
   useEffect(() => {
     if (localStorage.getItem("userToken") != null) {
       setUserToken(localStorage.getItem("userToken"));
-    //  setCount(getItemsContext().count);
+      setCount(getItemsContext().count);
     }
   }, []);
 
@@ -57,6 +59,15 @@ export default function App() {
         {
           path: "categories",
           element: <Categories />,
+        },
+        {
+          path: "products",
+          element: <AllProducts />,
+          children:[
+            {
+              path:"?page=:pageId",
+              element: <ProductPage/>,
+            },]
         },
         {
           path: "forgotPass",
