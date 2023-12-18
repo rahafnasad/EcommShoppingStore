@@ -8,7 +8,7 @@
 .profileLink nav{
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: rgb(49, 28, 5);
     color: white;
     height: 100vh;
     gap: 20px;
@@ -22,7 +22,7 @@
     width: 100%;
     text-decoration: none;
     color: white;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgb(104, 90, 34);
 text-align: center;
 margin-top: 10px;
 font-size: 20px;

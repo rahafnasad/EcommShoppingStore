@@ -7,7 +7,7 @@ export default function Home() {
 
 <>
 
-<div className=" myHome">
+<div className=" myHome p-5">
   <div className="overlay"></div>
   <div className="titel">
   <h1>RAHAF STORE</h1>
@@ -25,9 +25,7 @@ export default function Home() {
   <div className="bg"></div>
 
   <div className="bg"></div>
-  <div className="bg"></div>
-  <div className="bg"></div>
-  <div className="bg"></div>
+  
 </div>
 <div className="imgHome">
   <img src="l.png" alt="" />

@@ -34,6 +34,7 @@ import GetOrder from "./component/user/Profile/GetOrder.jsx";
 import AllProducts from "./component/user/categor/AllProducts.jsx";
 import ProductPage from "./component/user/categor/ProductPage.jsx";
 import CreateReview from "./component/user/categor/CreateReview.jsx";
+import FilterProduct from "./component/user/categor/FilterProduct.jsx";
 
 export default function App() {
   let { setUserToken } = useContext(UserContext);
@@ -62,17 +63,17 @@ export default function App() {
           element: <Categories />,
         },
         {
+          path: "filter",
+          element: <FilterProduct />,
+        },
+        {
           path: "crete/reviews/:productId",
           element: <CreateReview />,
         },
         {
           path: "products",
           element: <AllProducts />,
-          children:[
-            {
-              path:"?page=:pageId",
-              element: <ProductPage/>,
-            },]
+         
         },
         {
           path: "forgotPass",

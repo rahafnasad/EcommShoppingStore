@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 .navbar{
     background-color: white !important;
-    position: fixed;
     z-index: 1000;
     width: 100%;
     margin-top: 0;
+    border-bottom: 1px solid  rgb(49, 28, 5);
 
 }
 .count{

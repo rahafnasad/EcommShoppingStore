@@ -19,7 +19,7 @@ export default function Product() {
     const { data } = await axios.get(
       `${import.meta.env.VITE_API_URL}/products/${productId}`
     );
-    console.log(data.product)
+    console.log(data.product);
     return data.product;
   };
   const { data, isLoading } = useQuery("productt", getProduct);
@@ -93,8 +93,10 @@ export default function Product() {
             {userToken && (
               <button onClick={() => AddToCart(data._id)}>Add To Cart</button>
             )}
-            <Link to={`/crete/reviews/${data.id}`}>  <button>Create Review</button></Link>
-
+            <Link to={`/crete/reviews/${data.id}`}>
+              {" "}
+              <button>Create Review</button>
+            </Link>
           </div>
         </div>
         <div className="Reviews row">
@@ -102,11 +104,20 @@ export default function Product() {
           <div className="col-lg-8 my-5">
             {data.reviews ? (
               data.reviews.map((review, index) => (
-                <div className="review" key={index}>
-                  <Rating RatingNumb={review.rating} />
+                <div className="review " key={index}>
+                 
+                 <div className="d-flex mb-3">
+                 <img src={review.createdBy.image.secure_url} alt="" className="userImg"/>
+                 <div className="">
+                 <h2 >{review.createdBy.userName}</h2>
+                 <p className="createdAt">{review.createdAt}</p>
 
-                  <h3 className="comment">{review.comment}</h3>
-                  <p className="createdAt">{review.createdAt}</p>
+                 </div>
+                 </div>
+
+<div className="ms-5">                    <Rating RatingNumb={review.rating} />
+</div>
+                    <h3 className="comment ms-5">{review.comment}</h3>
                 </div>
               ))
             ) : (
