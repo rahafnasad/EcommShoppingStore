@@ -83,25 +83,23 @@ export default function Login() {
     />
   ));
   return (
-    <>
-      <div className="Reg-form">
-        <div className="main  ">
-          <input type="checkbox" id="chk" aria-hidden="true" />
-          <div className="sign-up">
-            <form onSubmit={formik.handleSubmit}>
-              <label htmlFor="chk" aria-hidden="true" className="main-lable">
+    <div className=" myHome">
+    <div className="overlay"></div>
+    <div className="formCreateRevie formLogH">
+    <form onSubmit={formik.handleSubmit}>
+              <label htmlFor="chk" aria-hidden="true" className="main-lable mt-0">
                 SIGN IN
               </label>
 
               {renderInput}
               <div className="Tocode">
                 {" "}
-                <Link to={"/sendCode"} className="text-danger">
+                <Link to={"/sendCode"} className="text-white mb-2">
                   forgot password
                 </Link>
               </div>
               <button
-                className="button-sub"
+                className="revSub mt-2"
                 type="submit"
                 id="submit"
                 disabled={!formik.isValid}
@@ -111,9 +109,22 @@ export default function Login() {
               {ifError&&<p className="IsError">The password or email you’ve entered is incorrect.</p>}
 
             </form>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
+
+    <div className="home">
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+      <div className="bg"></div>
+    </div>
+   
+  </div>
   );
 }

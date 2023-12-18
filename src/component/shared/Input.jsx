@@ -27,7 +27,7 @@ export default function Input({
           placeholder={name}
         />
         {touched[name] && errors[name] && (
-          <p className=" text text-danger mb-0 text-end">{errors[name]}</p>
+          <p className=" text text-white mb-0 text-end">{errors[name]}</p>
         )}
       </div>
     </>

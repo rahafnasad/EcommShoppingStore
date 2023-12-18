@@ -9,7 +9,6 @@ export default function GetOrder() {
     const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/order`, {
       headers: { Authorization: `Tariq__${token}` },
     });
-console.log(data);
     return data.orders;
   };
   const { data, isLoading } = useQuery("getOrder", getOrder);

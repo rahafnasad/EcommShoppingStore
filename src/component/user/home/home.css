@@ -77,16 +77,21 @@
 .imgHome{
     position: absolute;
     bottom: 0;
-    left: 380px;
+    left: 300px;
 
 }
 .imgHome img {
-    width: 145%;
+    width: 150%;
 }
 .myHome{
     position: relative;
 border:1px solid #333 ;
 
+}
+.formCreateRevie{
+    position: absolute;
+    bottom: 200px;
+    left: 550px;
 }
 .myHome .titel H1{
     font-size: 150px;

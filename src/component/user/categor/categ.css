@@ -3,8 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,500;1,100;1,200;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
 body{
     margin: 0;
     padding: 0;
@@ -141,12 +143,21 @@ margin-left: 20px;
 font-size: 20px;
 }
 .productInfoAll {
-    background-color: #dbdbdb;
-    border-radius: 10px;
-    margin: 15px;
-    align-items: center;
-    display: flex;
-    border: 1px solid #b1b1b1;
+    margin: 0 10px;
+    margin-top: 60px;
+height: 520px;    align-items: center;
+}
+.productInfoAll img {
+height: 280px;
+border-radius: 50%;
+border: 1px solid #acacac;
+
+}
+
+.productInfoAll h1{
+    color: rgb(68, 34, 0);
+    margin-bottom: 10px;
+    border-radius: 15px;
 }
 .carousel-item  img {
     width: 400px;
@@ -171,4 +182,76 @@ font-size: 20px;
 }
 .page-item .page-link:hover{
     cursor: pointer;
+}
+.rating img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border: none;
+}
+.rating {
+    margin: auto;
+}
+.review{
+    border-bottom: 1px solid #999999;
+    margin-bottom: 20px;
+}
+.createdAt{
+    margin: auto;
+}
+
+.formCreateRevie {
+    border: 2px solid rgb(255, 255, 255);
+    width: 400px;
+padding: 25px;
+border-radius: 10px;
+background-color: rgba(34, 17, 0, 0.4);
+
+
+}
+.formRevHi{
+    height: 450px;
+
+}
+.formCreateRevie .pRev {
+    color: white;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+.revSub{
+    background-color: white ;
+    color: #000000;
+    width: 90%;
+    padding: 8px 0 ;
+    margin-left: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.revSub:hover{
+    cursor: pointer;
+}
+.createeRe:hover,.start:hover{
+    cursor: pointer;
+}
+.productInfoAll h1 ,.productInfoAll h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+}
+.productInfoAll a {
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 15px;
+    color: black;
+    font-weight: 500;
+    background-color: white;
+    padding: 10px 25px;
+    border: 1px solid #8a8a8a;
+}
+.pagination .page-item .page-link{
+    color: black !important;
 }

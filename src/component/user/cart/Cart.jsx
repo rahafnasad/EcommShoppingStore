@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 export default function Cart() {
   const {userToken:token}=useContext(UserContext);
+  //let [total,setTotal]=useState(0);
+  let total=0;
   const [loding,setLoding]=useState(false);
   const [product,setProduct]=useState([]);
 
@@ -16,7 +18,6 @@ export default function Cart() {
     const navigate=useNavigate();
     const getItems=async()=>{
       const res = await getItemsContext();
-      console.log(res)
 
 
       setProduct(res);
@@ -92,6 +93,7 @@ const toOrder= ()=>{
     }
 
   }
+
  
   const removeItem=async(productId)=>{
     setLoding(true)
@@ -196,6 +198,11 @@ return res;
    </button>
  </div>
  <div className="price">${product.details.price}</div>
+ {
+  console.log(product.details.price*product.quantity)
+ }
+ {
+total+=product.details.price*product.quantity}
  <div className="subtotal">${product.details.price*product.quantity}</div>
 
 </div>
@@ -240,13 +247,11 @@ return res;
                   </div>
                   <span>%21.00</span>
                 </div>
-                <div className="summary-footer">
-                  <label>Subtotal</label>
-                  <span>$1234.00</span>
-                </div>
+             
                 <div className="summary-footer">
                   <label className="total">Total</label>
-                  <span>$1345.00</span>
+
+                  <span>{total}$</span>
                 </div>
                 <div className="checkout">
                   <a href="#" onClick={toOrder}>Chekout</a>

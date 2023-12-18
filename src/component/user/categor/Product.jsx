@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { CartContext } from "../contex/Cart";
 import { UserContext } from "../contex/User";
+import start from "../../../../public/start.png";
+import startt from "../../../../public/ss.png";
+import Rating from "./Rating";
 
 export default function Product() {
   let { userToken } = useContext(UserContext);
-const Rating=[];
-for(let i=0;i<5;i++) Rating.push(i);
+  // const Rating = [];
+  //for (let i = 0; i < 5; i++) Rating.push(i);
   const { AddToCartContext } = useContext(CartContext);
   const { productId } = useParams();
 
@@ -16,7 +19,7 @@ for(let i=0;i<5;i++) Rating.push(i);
     const { data } = await axios.get(
       `${import.meta.env.VITE_API_URL}/products/${productId}`
     );
-    console.log(data)
+    console.log(data.product)
     return data.product;
   };
   const { data, isLoading } = useQuery("productt", getProduct);
@@ -30,7 +33,7 @@ for(let i=0;i<5;i++) Rating.push(i);
       </div>
     );
   }
-  
+
   return (
     <>
       <div className="container ">
@@ -75,7 +78,7 @@ for(let i=0;i<5;i++) Rating.push(i);
             </div>
           </div>
           <div className="col-lg-8 detalis mt-5">
-            <h1 className="mt-5 mb-4 ms-4 mt-5"> 
+            <h1 className="mt-5 mb-4 ms-4 mt-5">
               <span>Name : </span> {data.name}
             </h1>
             <h2 className="mb-4 ms-4">
@@ -90,38 +93,26 @@ for(let i=0;i<5;i++) Rating.push(i);
             {userToken && (
               <button onClick={() => AddToCart(data._id)}>Add To Cart</button>
             )}
+            <Link to={`/crete/reviews/${data.id}`}>  <button>Create Review</button></Link>
+
           </div>
         </div>
-        <div className="Review">
-          {
-            data.reviews? data.reviews.map((review,index)=>
-            <React.Fragment key={index}>
-              <h3 className="comment">{review.comment}</h3>
-              <h2 className="rating">{review.rating}</h2>
-              <p className="createdAt">{review.createdAt}</p>
-              {
-                Rating.map((_,index)=>
-               
-                  
-                  index<review.rating? <img src="ss.png" alt="" />
-                  :
-                  <img src="start.png" alt="" />
-                
-                
-                
-                
-                )
-              }
-             
+        <div className="Reviews row">
+          <div className="col-lg-4"></div>
+          <div className="col-lg-8 my-5">
+            {data.reviews ? (
+              data.reviews.map((review, index) => (
+                <div className="review" key={index}>
+                  <Rating RatingNumb={review.rating} />
 
-
-            </React.Fragment>
-            
-            ):
-            <h2>No Reviews Found</h2>
-          }
- <img src="ss.png" alt="" />
-
+                  <h3 className="comment">{review.comment}</h3>
+                  <p className="createdAt">{review.createdAt}</p>
+                </div>
+              ))
+            ) : (
+              <h2>No Reviews Found</h2>
+            )}
+          </div>
         </div>
       </div>
     </>

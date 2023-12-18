@@ -23,3 +23,8 @@ export const orderSchema = yup.object({
 
     phone:yup.string().required("phone is required").length(10,"length is 10 number"),
 })
+export const reviewSchema = yup.object({
+
+    comment:yup.string().required("Comment is required"),
+
+})

@@ -16,9 +16,7 @@ export default function ForgotePasswors() {
 
   const onSubmit = async (users) => {
  try{
-  const email = users.email;
-  const password = users.password;
-  const code = users.code;
+
   const { data } = await axios.patch(
     `${import.meta.env.VITE_API_URL}/auth/forgotPassword`,
     users

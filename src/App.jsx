@@ -33,6 +33,7 @@ import ProfileContact from './component/user/Profile/ProfileContact.jsx'
 import GetOrder from "./component/user/Profile/GetOrder.jsx";
 import AllProducts from "./component/user/categor/AllProducts.jsx";
 import ProductPage from "./component/user/categor/ProductPage.jsx";
+import CreateReview from "./component/user/categor/CreateReview.jsx";
 
 export default function App() {
   let { setUserToken } = useContext(UserContext);
@@ -59,6 +60,10 @@ export default function App() {
         {
           path: "categories",
           element: <Categories />,
+        },
+        {
+          path: "crete/reviews/:productId",
+          element: <CreateReview />,
         },
         {
           path: "products",

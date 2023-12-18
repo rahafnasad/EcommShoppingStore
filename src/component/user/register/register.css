@@ -45,18 +45,22 @@
     transition: 0.5s ease-in-out;
 }
 .main-input{
-    width: 80%;
+    width: 90%;
     height: 30px;
-    background: #e0dede;
+    background: transparent;
+    border: 2px solid white;
+    padding: 15px;
+    padding: 20px 0;
     justify-content: center;
     display: flex;
-    margin: 20px auto;
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
+    margin: 40px auto;
+    border-radius: 15px;
 }
-
+.main-input::placeholder{
+color: white;
+padding-left: 20px;
+font-size: 18px;
+}
 .main-input::file-selector-button{
     font-size: 10px;
     background-color: #000;
@@ -93,20 +97,7 @@
     transform: translateY(-180px);
     transition: 0.8 ease-in-out;
 }
-.log-in .main-lable{
-    color: #573b8a;
-    transform: scale(0.6);;
 
-}
-#chk:checked ~ .log-in{
-    transform: translateY(-500px);
-}
-#chk:checked ~ .log-in .main-lable{
-    transform: scale(1);
-}
-#chk:checked ~ .sign-up .main-lable{
-    transform: scale(0.6);
-}
 .Tocode a {
     text-decoration: none;
 width: 100%;
@@ -122,4 +113,7 @@ width: 100%;
     color: red;
     margin-left: 10px;
     text-align: center;
+}
+.formRegH{
+    height: 550px;
 }
