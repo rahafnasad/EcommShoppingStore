@@ -96,8 +96,8 @@ export default function Register() {
   return (
     <div className=" myHome">
     <div className="overlay"></div>
-    <div className=" formCreateRevie formRegH">
-    <form onSubmit={formik.handleSubmit} encType="multipart/form-data">
+    <div className=" formCreateRevie  ">
+    <form onSubmit={formik.handleSubmit} encType="multipart/form-data" className="formZ">
           <label htmlFor="chk" aria-hidden="true" className="main-lable mt-0" >SIGN UP</label>
 
             {renderInput}
@@ -113,20 +113,7 @@ export default function Register() {
           </form>
     </div>
 
-    <div className="home">
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-    </div>
-    
+   
   </div>
   );
 }

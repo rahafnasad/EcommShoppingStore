@@ -33,7 +33,7 @@ if(isLoading){
       <div >
 
       <span className='text-uppercase border-bottom pe-2 pb-1'>categories</span>
-      <p>We have the best materials and products</p>
+      <p className='Disci mb-0'>We have the best materials and products</p>
 
       </div>
 

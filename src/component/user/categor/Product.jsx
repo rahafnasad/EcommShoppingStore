@@ -78,16 +78,21 @@ export default function Product() {
             </div>
           </div>
           <div className="col-lg-8 detalis mt-5">
-            <h1 className="mt-5 mb-4 ms-4 mt-5">
-              <span>Name : </span> {data.name}
+            
+           <div className="d-flex bodrerBu">
+           <h1 className="mt-5 mb-4 ms-4 mt-5">
+              {data.name}
             </h1>
-            <h2 className="mb-4 ms-4">
+            <Rating RatingNumb={data.ratingNumbers}/>
+           </div>
+           
+           <div className="bodrerBu">   <h2 className="mb-4 ms-4 mt-2">
               {" "}
               <span> price : </span>
               {data.finalPrice}
-            </h2>
+            </h2></div>
+         {console.log(data)}
             <p className="mb-4 ms-4">
-              <span>description : </span>
               {data.description}
             </p>
             {userToken && (
@@ -102,6 +107,7 @@ export default function Product() {
         <div className="Reviews row">
           <div className="col-lg-4"></div>
           <div className="col-lg-8 my-5">
+            <h2 className="feedback mb-3">feedback : </h2>
             {data.reviews ? (
               data.reviews.map((review, index) => (
                 <div className="review " key={index}>

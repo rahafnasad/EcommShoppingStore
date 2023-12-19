@@ -25,7 +25,7 @@ if(isLoading){
       <div >
 
       <span className='text-uppercase border-bottom pe-2 pb-1'>category</span>
-      <p>We have the best materials and products</p>
+      <p className='Disci mb-0'>We have the best materials and products</p>
 
       </div>
 
@@ -33,16 +33,16 @@ if(isLoading){
     <div className="row mb-5 mx-3">
        
     {data.length? data.map((product)=>
-    <div className=" col-lg-4 text-center " key={product._id}>
-      <div className="product ">
-      <img src={product.mainImage.secure_url } alt="" />
-        <h2> {product.name}</h2>
+    <div className=" col-lg-3 text-center " key={product._id}>
+      <div className="productInfoAll d-flex flex-column mt-5 ">
+      <img src={product.mainImage.secure_url } alt="" className='mt-5'/>
+        <h1> {product.name}</h1>
         <div className="ratingCat d-flex justify-content-center">
         <Rating RatingNumb={product.ratingNumbers}/>
 
         </div>
 
-        <Link to={`/product/${product._id}`}>Detalis</Link>
+        <Link to={`/product/${product._id}`} className='productDet'>Detalis</Link>
 
       </div>
 

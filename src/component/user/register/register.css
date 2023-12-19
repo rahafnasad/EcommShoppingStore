@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #c7c2f8, #6f68b8,#383869);
     font-family: 'Montserrat', sans-serif;
 
 
@@ -114,6 +113,8 @@ width: 100%;
     margin-left: 10px;
     text-align: center;
 }
-.formRegH{
+.formRegH {
     height: 550px;
+
 }
+

@@ -8,7 +8,9 @@
 .profileLink nav{
     display: flex;
     flex-direction: column;
-    background-color: rgb(49, 28, 5);
+
+    background-color: rgb(250, 250, 250);
+    box-shadow:  3px 5px 10px #000;
     color: white;
     height: 100vh;
     gap: 20px;
@@ -16,13 +18,22 @@
     align-items: center;
     margin: 10px;
     border-radius: 5px;
+    border: 1px solid #838383;
 
+
+
+}
+.sideSort{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
 }
 .profileLink nav a{
     width: 100%;
     text-decoration: none;
-    color: white;
-    border-bottom: 1px solid rgb(104, 90, 34);
+    color: #333;
+    border-bottom: 1px solid #838383;
 text-align: center;
 margin-top: 10px;
 font-size: 20px;
@@ -45,4 +56,14 @@ table {
     padding: 8px;
     padding-left: 20px;
     
+  }
+  .getOrder th {
+    width: 50px;
+    padding: 0;
+  }
+  #products{
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+    border: 1px solid rgb(197, 197, 197);
+    box-shadow:  3px 3px 8px #333;
   }

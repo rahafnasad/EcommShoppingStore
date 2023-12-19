@@ -22,40 +22,35 @@ export default function GetOrder() {
   }
   return (
     <div className="getOrder">
-      {data.length ? (
-        data.map((order, index) => (
-          <div className="getOrderDetails" key={order._id}>
-                        <h3> Order {index}</h3>
-
-                        <table bgcolor="black" width="700" className="px-5">
+      
+        {data.length ? (
+          data.map((order, index) => (
+            <div className="getOrderDetails" key={order._id}>
+              <table  width="700" className="px-5">
         <tr bgcolor="grey">
-            <th width="100">address  </th>
-            <th width="100" >coupon Name  </th>
-            <th width="100">created At  </th>
-            <th width="100">final Price  </th>
-            <th width="100">payment Type  </th>
-            <th width="100">phone Number  </th>
-            <th width="100">status  </th>
+          <th width="100" className="px-2">address </th>
+          <th width="100" className="px-2">coupon Name </th>
+          <th width="100" className="px-2" >created At </th>
+          <th width="100" className="px-2">final Price </th>
+          <th width="100" className="px-2">payment Type </th>
+          <th width="100" className="px-2">phone Number </th>
+          <th width="100" className="px-2">status </th>
         </tr>
-        <tr bgcolor="lightgrey" align="center">
-            <td>{order.address}</td>
-            <td>{order.couponName}</td>
-            <td>{order.createdAt}</td>
-            <td>{order.finalPrice}</td>
-            <td>{order.paymentType}</td>
-            <td>{order.phoneNumber}</td>
-            <td>{order.status}</td>
-        </tr>
+              <tr bgcolor="lightgrey" align="center">
+                <td>{order.address}</td>
+                <td>{order.couponName}</td>
+                <td>{order.createdAt}</td>
+                <td>{order.finalPrice}</td>
+                <td>{order.paymentType}</td>
+                <td>{order.phoneNumber}</td>
+                <td>{order.status}</td>
+              </tr>      </table>
 
-            </table>
-            
-
-
-          </div>
-        ))
-      ) : (
-        <h2> order not found</h2>
-      )}
+            </div>
+          ))
+        ) : (
+          <h2> order not found</h2>
+        )}
     </div>
   );
 }

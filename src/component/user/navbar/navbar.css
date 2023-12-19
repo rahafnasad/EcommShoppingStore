@@ -10,13 +10,18 @@
 
 }
 .count{
-    background-color: red;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-  
+    background-color: rgb(243, 207, 0);
+    color: black;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
     text-align: center;
-    font-size: 12px;
-    padding: 3px;
+    display: inline-block;
+border-radius: 0.25rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    padding: 0.25rem 0.4rem;
 
 }
 
@@ -59,8 +64,10 @@ font-weight: 700;
 font-family: 'Josefin Sans', sans-serif;}
 .finaly{
     height:  400px;
-    background-color: black;
+    background-color: rgb(221, 221, 221);
     margin: 12px;
+    box-shadow:  15px 15px  20px #333;
+
 
 }
 .finaly .finalimg img {

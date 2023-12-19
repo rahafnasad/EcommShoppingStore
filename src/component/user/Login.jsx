@@ -111,19 +111,6 @@ export default function Login() {
             </form>
     </div>
 
-    <div className="home">
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-      <div className="bg"></div>
-    </div>
    
   </div>
   );
