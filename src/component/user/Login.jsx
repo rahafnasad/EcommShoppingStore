@@ -104,7 +104,7 @@ export default function Login() {
                 id="submit"
                 disabled={!formik.isValid}
               >
-                Register
+                Log In
               </button>
               {ifError&&<p className="IsError">The password or email you’ve entered is incorrect.</p>}
 

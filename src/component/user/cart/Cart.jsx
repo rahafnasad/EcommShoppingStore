@@ -198,9 +198,7 @@ return res;
    </button>
  </div>
  <div className="price">${product.details.price}</div>
- {
-  console.log(product.details.price*product.quantity)
- }
+
  {
 total+=product.details.price*product.quantity}
  <div className="subtotal">${product.details.price*product.quantity}</div>

@@ -5,7 +5,8 @@ import { toast } from "react-toastify";
 export const CartContext = createContext(null);
 export function CartContextProvider({ children }) {
   const[total,setTotal]=useState(0);
-  const [count,setCount]=useState(0);
+ let [count,setCount]=useState(0);
+ 
 
   const AddToCartContext = async (productId) => {
     try {

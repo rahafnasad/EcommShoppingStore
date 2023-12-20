@@ -11,12 +11,13 @@ export default function AllProducts() {
   const [ddata, setData] = useState([]);
   const [total, setTotal] = useState([]);
   const [ppage, setPpage] = useState([]);
-const [isSort,setIsSort]=useState(false);
+  const [isSort, setIsSort] = useState(false);
   let [min, setMin] = useState(0);
   let [max, setMax] = useState(500);
-  let [sort,setSort]=useState("");
-  let [limit,setLimit]=useState("");
-//let limit ="";
+  let [sort, setSort] = useState("");
+  let [limit, setLimit] = useState("");
+  let [search, setSearch] = useState("");
+  //let limit ="";
   const [isLoading, setIsLoading] = useState(false);
 
   const getPage = (pageId) => {
@@ -24,7 +25,7 @@ const [isSort,setIsSort]=useState(false);
 
     setPage(pageId);
 
-    getAllProducts(pageId, min, max,sort,limit);
+    getAllProducts(pageId, min, max, sort, limit, search);
     //setIsLoading(false);
   };
   const nextPage = () => {
@@ -46,130 +47,196 @@ const [isSort,setIsSort]=useState(false);
     }
     //setIsLoading(false);
   };
-  const getAllProducts = async (page, min, max,sort,limit) => {
+  const getAllProducts = async (page, min, max, sort, limit, search) => {
+    console.log(search)
     setSort(sort);
-    setLimit(limit)
-    console.log(limit)
-
+    setLimit(limit);
+    setSearch(search);
     const { data } = await axios.get(
       `${
         import.meta.env.VITE_API_URL
-      }/products?page=${page}&limit=${limit}&price[gte]=${min}&price[lte]=${max}&sort=${sort}`
+      }/products?page=${page}&limit=${limit}&price[gte]=${min}&price[lte]=${max}&sort=${sort}&search=${search}`
     );
     setData(data.products);
     setTotal(data.total);
     setPpage(data.page);
     setIsLoading(false);
   };
-  const sorted =()=>{
-    setIsSort(true)
-  }
-  const canceled=()=>{
-    setIsSort(false)
+  const sorted = () => {
+    setIsSort(true);
+  };
+  const canceled = () => {
+    setIsSort(false);
+  };
+  const limitValue = (e) => {
+    // limit=e.target.value;
+    getAllProducts(page, min, max, "", e.target.value, search);
+  };
+  const changeSearch=(e)=>{
 
-  }
-  const limitValue=(e)=>{
-   // limit=e.target.value;
-    getAllProducts(page, min, max,"",e.target.value)
+    getAllProducts(page, min, max, "", limit, e.target.value);
   }
   useEffect(() => {
     setIsLoading(true);
-    getAllProducts(1, min, max,sort,limit);
+    getAllProducts(1, min, max, sort, limit, search);
   }, []);
 
   if (isLoading) {
     return <p>loogfiing</p>;
   }
   return (
-    <aside className="Profile row ">
-      {!isSort?     <div className="d-flex justify-content-end"> <button className="sorted" onClick={sorted}>Product classification</button></div>:""
-}
-
-      {isSort? <div className="profileLink col-lg-2 ">
-        <nav className="sideSort">
-          <button className="canceled" onClick={canceled}><img src="error.png" alt="" /></button>
-
-          <Link to="" className="mt-0">
-          <p className="mt-1 peiceRange text-lg-start ms-2">Display :</p>
-
-        <div className="d-flex">
-        <p className="mt-1 ms-2 mb-1 peiceRange s16">Limit :</p>
-        <input type="text" className="limit mb-0"  name="limit" onChange={limitValue}/>
-
+    <aside className="Profile row mx-5">
+      {!isSort ? (
+        <div className="d-flex justify-content-around">
+          {" "}
+          <input type="text" placeholder="Search"  className="search" onChange={changeSearch} name="search"/>
+          <button className="sorted" onClick={sorted}>
+            Product classification
+          </button>
         </div>
-          </Link>
-          <p className="mt-1 peiceRange text-lg-start ms-2  w-100">Price Range :</p>
-          <div className="d-flex">
-        <p className="mt-1 ms-2 mb-1 peiceRange s16">Min</p>
-        <input type="text" className="limit mb-0 " value={min}  name="limit" onChange={limitValue}/>
-        <p className="mt-1 ms-2 mb-1 peiceRange s16">-</p>
+      ) : (
+        ""
+      )}
 
-        <p className="mt-1 ms-2 mb-1 peiceRange s16">Max</p>
-        <input type="text" className="limit mb-0" value={max}  name="limit" onChange={limitValue}/>
+      {isSort ? (
+        <div className="profileLink col-lg-2 ">
+          <nav className="sideSort">
+            <button className="canceled" onClick={canceled}>
+              <img src="error.png" alt="" />
+            </button>
+
+            <Link to="" className="mt-0">
+              <p className="mt-1 peiceRange text-lg-start ms-2">Display :</p>
+
+              <div className="d-flex">
+                <p className="mt-1 ms-2 mb-1 peiceRange s16">Limit :</p>
+                <input
+                  type="text"
+                  className="limit mb-0"
+                  name="limit"
+                  onChange={limitValue}
+                />
+              </div>
+            </Link>
+            <p className="mt-1 peiceRange text-lg-start ms-2  w-100">
+              Price Range :
+            </p>
+            <div className="d-flex">
+              <p className="mt-1 ms-2 mb-1 peiceRange s16">Min</p>
+              <input
+                type="text"
+                className="limit mb-0 "
+                value={min}
+                name="limit"
+                onChange={limitValue}
+              />
+              <p className="mt-1 ms-2 mb-1 peiceRange s16">-</p>
+
+              <p className="mt-1 ms-2 mb-1 peiceRange s16">Max</p>
+              <input
+                type="text"
+                className="limit mb-0"
+                value={max}
+                name="limit"
+                onChange={limitValue}
+              />
+            </div>
+            <Link to="" className="mt-0">
+              {" "}
+              <ReactSlider
+                className="horizontal-slider mt-0"
+                thumbClassName="example-thumb"
+                trackClassName="example-track"
+                min={0}
+                max={500}
+                defaultValue={[0, 500]}
+                ariaLabel={["Lower thumb", "Upper thumb"]}
+                ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
+                renderThumb={(props, state) => (
+                  <div {...props}>{state.valueNow}</div>
+                )}
+                pearling
+                onChange={([min, max]) => {
+                  setMin(min);
+                  setMax(max);
+                  getAllProducts(page, min, max, sort, limit, search);
+                }}
+              />
+            </Link>
+
+            <Link to="" className="mt-1">
+              <p className="mt-3 peiceRange text-lg-start ms-2">
+                Sort products by price
+              </p>
+              <button
+                className="sort"
+                onClick={() =>
+                  getAllProducts(page, min, max, "-price", limit, search)
+                }
+              >
+                From highest price to lowest price
+              </button>
+              <button
+                className="sort"
+                onClick={() =>
+                  getAllProducts(page, min, max, "price", limit, search)
+                }
+              >
+                From lowest price to highest price
+              </button>
+            </Link>
+            <Link to="" className="mt-1">
+              <p className="mt-3 peiceRange text-lg-start ms-2">
+                Sort Products By Name
+              </p>
+              <button
+                className="sort text-lg-start w-100 ms-2"
+                onClick={() =>
+                  getAllProducts(page, min, max, "name", limit, search)
+                }
+              >
+                From A To Z Name
+              </button>
+              <button
+                className="sort text-lg-start w-100 ms-2"
+                onClick={() =>
+                  getAllProducts(page, min, max, "-name", limit, search)
+                }
+              >
+                From Z To A Name
+              </button>
+            </Link>
+          </nav>
         </div>
-          <Link to="" className="mt-0">
-            {" "}
-            <ReactSlider
-              className="horizontal-slider mt-0"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
-              min={0}
-              max={500}
-              defaultValue={[0, 500]}
-              ariaLabel={["Lower thumb", "Upper thumb"]}
-              ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
-              renderThumb={(props, state) => (
-                <div {...props}>{state.valueNow}</div>
-              )}
-              pearling
-              onChange={([min, max]) => {
-                setMin(min);
-                setMax(max);
-                getAllProducts(page, min, max,sort,limit);
-              }}
-            />
-          </Link>
+      ) : (
+        ""
+      )}
 
-
-          <Link to="" className='mt-1'> 
-          <p className="mt-3 peiceRange text-lg-start ms-2">Sort products by price</p>
-          <button className="sort" onClick={()=>getAllProducts(page, min, max,"-price",limit)}>From highest price to lowest price</button>
-          <button className="sort"onClick={()=>getAllProducts(page, min, max,"price",limit)}>From lowest price to highest price</button>
-
-
-
-          </Link>
-          <Link to="" className='mt-1'> 
-          <p className="mt-3 peiceRange text-lg-start ms-2">Sort Products By Name</p>
-          <button className="sort text-lg-start w-100 ms-2" onClick={()=>getAllProducts(page, min, max,"-name",limit)}>From A To Z Name</button>
-          <button className="sort text-lg-start w-100 ms-2"onClick={()=>getAllProducts(page, min, max,"name",limit)}>From Z To A Name</button>
-
-
-
-          </Link>
-
-        </nav>
-      </div>:""}
-     
-      <div className={`UserData col-lg-${isSort?"9":"12"}`}>
+      <div className={`UserData col-lg-${isSort ? "9" : "12"}`}>
         <div className="productInbage">
           <div className="row ">
             {ddata.length ? (
               ddata.map((product, index) => (
                 <div className="col-lg-3 mt-1 ">
-                  <div className="productInfoAll d-flex flex-column mt-5">
+                  <div className="productInfoAll d-flex flex-column mt-5 pb-5">
                     <img
                       src={product.mainImage.secure_url}
                       alt=""
-                      className="mt-5"
+                      className="mt-3"
                     />
 
                     <h1>{product.name}</h1>
+                    {product.discount?
+                    <h2><s className="text-danger">{product.finalPrice} $</s>  {product.finalPrice-(product.finalPrice*(product.discount/100))}$</h2>
+                    :
+                    
+                    
                     <h2> {product.finalPrice}$</h2>
+                  }
                     <div className="rating my-0">
                       <Rating RatingNumb={product.ratingNumbers} />
                     </div>
-                    <Link to={`/product/${product._id}`}>Detalis</Link>
+                    <Link to={`/product/${product._id}`} >Detalis</Link>
                   </div>
                 </div>
               ))
