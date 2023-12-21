@@ -7,6 +7,7 @@ import logo from "../../../../public/logo.png";
 import { UserContext } from "../contex/User";
 export default function Navbar() {
   let { userToken,setUserToken,userData,setUserData ,loader } = useContext(UserContext);
+  
   if(loader&&userToken){
     
     return <div className="spinner-border" role="status">
@@ -17,7 +18,7 @@ export default function Navbar() {
   let navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("userToken");
-   // setUserToken(null);
+   setUserToken(null);
     setUserData(null);
     navigate("/");
   };
@@ -133,7 +134,6 @@ export default function Navbar() {
                       <li>
                         <Link
                           className="dropdown-item "
-                          to="/login"
                           onClick={logout}
                         >
                           logout
