@@ -31,9 +31,8 @@ if(isLoading){
 <div className="catrg">
 <div className="titelee d-flex justify-content-center ">
       <div >
-
-      <span className='text-uppercase border-bottom pe-2 pb-1'>categories</span>
-      <p className='Disci mb-0'>We have the best materials and products</p>
+      <span  data-text="category">category</span>
+     
 
       </div>
 

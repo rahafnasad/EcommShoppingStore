@@ -12,6 +12,7 @@ export default function ProfileContact() {
   }
   return (
 <div className="contact">
+
   <h3>Email : {userData.email}</h3>
 </div>
     )

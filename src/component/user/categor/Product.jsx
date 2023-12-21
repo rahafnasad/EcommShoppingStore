@@ -37,6 +37,7 @@ export default function Product() {
   return (
     <>
       <div className="container ">
+        
         <div className="row">
           <div className="col-lg-4 ">
             <div
@@ -80,17 +81,22 @@ export default function Product() {
           <div className="col-lg-8 detalis mt-5">
             
            <div className="d-flex bodrerBu">
+            
            <h1 className="mt-5 mb-4 ms-4 mt-5">
               {data.name}
             </h1>
+            {console.log(data)}
+
             <Rating RatingNumb={data.ratingNumbers}/>
            </div>
            
-           <div className="bodrerBu">   <h2 className="mb-4 ms-4 mt-2">
-              {" "}
-              <span> price : </span>
-              {data.finalPrice}
-            </h2></div>
+           <div className="bodrerBu">         {data.discount?
+                    <h2 className="ms-2"> price : <s className="text-danger">{data.finalPrice}$</s>  {data.finalPrice-(data.finalPrice*(data.discount/100))}$</h2>
+                    :
+                    
+                    
+                    <h2>price :  {data.finalPrice}$</h2>
+                  }</div>
          {console.log(data)}
             <p className="mb-4 ms-4">
               {data.description}
@@ -107,7 +113,16 @@ export default function Product() {
         </div>
         <div className="Reviews row">
           <div className="col-lg-4"></div>
-          <div className="col-lg-8 my-5">
+          
+
+
+
+
+
+          <div className="col-lg-8 my-5 ">
+            
+
+
             <h2 className="feedback mb-3">feedback : </h2>
             {data.reviews ? (
               data.reviews.map((review, index) => (

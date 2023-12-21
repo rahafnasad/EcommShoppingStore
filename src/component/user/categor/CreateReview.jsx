@@ -82,6 +82,14 @@ export default function CreateReview() {
   return (
     <div className=" myHome">
       <div className="overlay"></div>
+      <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="create review">create review</span>
+     
+
+      </div>
+
+    </div>
       <div className="formCreateRevie formRevHi">
         <form onSubmit={formik.handleSubmit}>
           <p className="pRev">Create Review</p>

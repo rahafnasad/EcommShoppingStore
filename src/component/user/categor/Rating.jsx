@@ -7,7 +7,7 @@ export default function Rating({ RatingNumb }) {
   return (
     <div className="rating d-flex">
       {Rating.map((_, index) =>
-        index < RatingNumb ? (
+        index < Math.round(RatingNumb) ? (
           <img src={startt} alt="" />
         ) : (
           <img src={start} alt="" />

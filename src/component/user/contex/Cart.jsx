@@ -18,19 +18,19 @@ export function CartContextProvider({ children }) {
         { headers: { Authorization: `Tariq__${token}` } }
       );
       if ((data.message = "success")) {
-        toast.success(
-          "acount created succesfully , plz verify your email to login",
-          {
-            position: "top-right",
-            autoClose: false,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          }
-        );
+      
+ 
+             
+      toast('product added succesfully ', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
       }
       return data;
     } catch (error) {

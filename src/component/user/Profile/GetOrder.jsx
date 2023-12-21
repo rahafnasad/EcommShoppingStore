@@ -27,16 +27,16 @@ export default function GetOrder() {
           data.map((order, index) => (
             <div className="getOrderDetails" key={order._id}>
               <table  width="700" className="px-5">
-        <tr bgcolor="grey">
+        <tr className="rowOne">
           <th width="100" className="px-2">address </th>
-          <th width="100" className="px-2">coupon Name </th>
+          <th width="100 " className="px-4">coupon Name </th>
           <th width="100" className="px-2" >created At </th>
-          <th width="100" className="px-2">final Price </th>
-          <th width="100" className="px-2">payment Type </th>
-          <th width="100" className="px-2">phone Number </th>
+          <th width="100" className="px-4">final Price </th>
+          <th width="100" className="px-4">payment Type </th>
+          <th width="100" className="px-4">phone Number </th>
           <th width="100" className="px-2">status </th>
         </tr>
-              <tr bgcolor="lightgrey" align="center">
+              <tr className="rowTow" align="center">
                 <td>{order.address}</td>
                 <td>{order.couponName}</td>
                 <td>{order.createdAt}</td>

@@ -73,16 +73,16 @@ const toOrder= ()=>{
       );
       if ((data.message = "success")) {
   
-        toast.success("Cart Cleared sucessfuly", {
+        toast('cart cleared successfuly', {
           position: "top-right",
-          autoClose: false,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "dark",
-        });
+          });
       }
       setLoding(false);
       getItems();
@@ -116,6 +116,14 @@ return res;
   return (
 <div className="cart">
       <div className="container">
+      <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="cart">cart</span>
+     
+
+      </div>
+
+    </div>
         <div className="row">
           <div className="cart-items">
             <div className="products" id="products">
@@ -129,7 +137,7 @@ return res;
                 <div className="price">
                   <h2>Price</h2>
                 </div>
-                <div className="subtotal">
+                <div className="subtotal ">
                   <h2>Subtotal</h2>
                 </div>
                

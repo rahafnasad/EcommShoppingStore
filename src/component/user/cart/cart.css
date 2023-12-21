@@ -169,10 +169,12 @@ font-size:20px;
 
 
  .checkout a{
-    background-color: #141718;
+    background-color: rgb(243, 207, 0);
     width:100%;
     display: flex;
-    color:#fff;
+    color:black;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-decoration: none;
     justify-content: center;
     padding: 10px 26px;
@@ -319,8 +321,8 @@ footer .logo a {
 .clearCart{
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: red !important;
-    color: white;
+    background-color: rgb(243, 207, 0) !important;
+    color: black;
     padding: 10px;
     border-radius: 10px;
     font-weight: 900;

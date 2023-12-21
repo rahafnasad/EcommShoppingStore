@@ -26,16 +26,17 @@ export default function CreateOrder() {
     );
     if ((data.message = "success")) {
 
-      toast.success("The order was installed successfully", {
+          
+      toast('The order was installed successfully', {
         position: "top-right",
-        autoClose: false,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         theme: "dark",
-      });
+        });
     }
    return data;
   }
@@ -100,12 +101,14 @@ export default function CreateOrder() {
   }
   return (
     <div className="container">
-      <div className="titelee d-flex justify-content-center ">
-        <div>
-          <span className="text-uppercase border-bottom pe-2 pb-1 CompleteOrder">
-            Complete The Order
-          </span>
-        </div>      </div>
+ <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="create order">create order</span>
+     
+
+      </div>
+
+    </div>
 
         <div className="row">
           {data?.products ? (
@@ -117,8 +120,8 @@ export default function CreateOrder() {
 
 
               </div>
-              <div className="myOrderQuant">
-              <span>{product.quantity}</span>
+              <div className="myOrderQuant count">
+              <span>quantity is : {product.quantity}</span>
 
               </div>
              </div>

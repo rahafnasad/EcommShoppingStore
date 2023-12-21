@@ -23,16 +23,17 @@ export default function ForgotePasswors() {
   );
 
   if ((data.message = "success")) {
-    toast.success("The password has been updated successfully", {
+  
+    toast('The password has been updated successfully', {
       position: "top-right",
-      autoClose: false,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "dark",
-    });
+      });
     navigate("/login");
   }
  }
@@ -84,16 +85,30 @@ export default function ForgotePasswors() {
     />
   ));
   return (
-    <div className="container">
-      <form className="formCode" onSubmit={formik.handleSubmit}>
-        <p>Please enter the code to verify it and change the password</p>
-        {renderInput}
+    <div className=" myHome">
+    <div className="overlay"></div>
+    <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="forgot  password">forgot  password</span>
+     
+    
+      </div>
+    
+    </div>
+    <div className="formCreateRevie formLogH">
+    <form  onSubmit={formik.handleSubmit}>
+<p className="text-white">Please enter the code to verify it and change the password</p>
+{renderInput}
 
-        <button className="button-sub" type="submit" disabled={!formik.isValid}>
-          Submit
-        </button>
-        {error&& <p className="text-danger">{error}</p>}
-      </form>
+<button className="revSub" type="submit" disabled={!formik.isValid}>
+  Submit
+</button>
+{error&& <p className="text-danger">{error}</p>}
+</form>
+    </div>
+    
+    
     </div>
   );
 }
+

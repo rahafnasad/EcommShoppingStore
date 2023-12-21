@@ -21,22 +21,22 @@ if(isLoading){
   return (
 <>
 <div className="products Container mb-0">
+
     <div className="titelee d-flex justify-content-center ">
       <div >
-
-      <span className='text-uppercase border-bottom pe-2 pb-1'>category</span>
-      <p className='Disci mb-0'>We have the best materials and products</p>
+      <span  data-text="category">category</span>
+     
 
       </div>
 
     </div>
-    <div className="row mb-5 mx-3">
+    <div className="row mb-5 mx-5 mt-0 ">
        
     {data.length? data.map((product)=>
     <div className=" col-lg-3 text-center " key={product._id}>
       <div className="productInfoAll d-flex flex-column mt-5 ">
-      <img src={product.mainImage.secure_url } alt="" className='mt-5'/>
-        <h1> {product.name}</h1>
+      <img src={product.mainImage.secure_url } alt="" className='mt-3'/>
+        <h1 className='mx-2'> {product.name}</h1>
         <div className="ratingCat d-flex justify-content-center">
         <Rating RatingNumb={product.ratingNumbers}/>
 

@@ -8,12 +8,16 @@
  
 
 }
-.formOrd{
+.formOrder{
     border: 1px solid #a0a0a0;
     margin: 40px;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgb(250, 250, 250);
     border-radius: 10px;
+    margin: auto;
 
+}
+.formOrder input::placeholder{
+    color: black !important;
 }
 .submitOrder{
     width:60%;
@@ -21,8 +25,8 @@
     margin: 10px auto;
     justify-content: center;
     display: block;
-    color: #fff;
-    background-color: #333;
+    color: black;
+    background-color: rgb(243, 207, 0);
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
@@ -38,22 +42,20 @@
 .myOrderImg img {
     width: 200px;
     height: 200px;
-    box-shadow:  5px 20px 50px #000;
-    border-radius: 15px;
+    border: 1ox solid #333;
+    box-shadow:  2px 8px 15px rgb(243, 207, 0);
+    border-radius:50%;
 
 }
-.myOrderQuant span{
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    font-weight: 900;
-    border-radius: 10px;
-    padding: 10px;
-}
+
 .myOrderQuant {
     text-align: center;
     position: absolute;
-    bottom: 0;
-    left: 100px;
+    bottom: 3px;
+    left: 50px;
+    border: 1px solid #666666;
+    padding: 5px;
+    font-size: 15px;
 }
 .myOrderProduct{
     position: relative;

@@ -30,16 +30,17 @@ export default function Login() {
 
         navigate("/");
 
-        toast.success("Log In succesfully ", {
+    
+        toast('log in succesfully', {
           position: "top-right",
-          autoClose: false,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "dark",
-        });
+          });
       }
     } catch (error) {
       setIfError(true);
@@ -85,6 +86,14 @@ export default function Login() {
   return (
     <div className=" myHome">
     <div className="overlay"></div>
+    <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="sign in">sign in</span>
+     
+
+      </div>
+
+    </div>
     <div className="formCreateRevie formLogH">
     <form onSubmit={formik.handleSubmit}>
               <label htmlFor="chk" aria-hidden="true" className="main-lable mt-0">

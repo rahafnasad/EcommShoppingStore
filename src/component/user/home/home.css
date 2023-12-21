@@ -87,12 +87,12 @@ z-index: 200;
 
 }
 .imgHome img {
-    width: 150%;
+    width: 120%;
 }
 .myHome{
     position: relative;
 background-color: white !important;
-height: 100vh;
+height: calc(100vh - 70px);
 background-size: cover;
 background-attachment: fixed;
 background: url(../../../../public/d.jpg);
@@ -104,8 +104,8 @@ box-shadow:  10px 10px 15px #333;
 margin: auto;
 }
 .myHome .titel H1{
-    font-size: 150px;
+    font-size: 130px;
     position: absolute;
-    top: 260px;
+    top: 240px;
     letter-spacing: 4px;
 }

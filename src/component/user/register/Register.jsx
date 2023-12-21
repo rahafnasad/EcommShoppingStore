@@ -23,19 +23,17 @@ export default function Register() {
       formData
     );
     if ((data.message = "success")) {
-      toast.success(
-        "acount created succesfully , plz verify your email to login",
-        {
-          position: "top-right",
-          autoClose: false,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        }
-      );
+   
+      toast('acount created succesfully , plz verify your email to login', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   };
   const formik = useFormik({
@@ -96,6 +94,14 @@ export default function Register() {
   return (
     <div className=" myHome">
     <div className="overlay"></div>
+    <div className="titelee d-flex justify-content-center ">
+      <div >
+      <span  data-text="sign up">sign up</span>
+     
+
+      </div>
+
+    </div>
     <div className=" formCreateRevie  ">
     <form onSubmit={formik.handleSubmit} encType="multipart/form-data" className="formZ">
           <label htmlFor="chk" aria-hidden="true" className="main-lable mt-0" >SIGN UP</label>
