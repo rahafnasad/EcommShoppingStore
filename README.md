@@ -1,5 +1,5 @@
 # use React , Creating an e-commerce website ​🛒​🛍️
-##Pages that have been applied
+## Pages that have been applied
 ### Home 
 ### Login 
 ### Forgot password 
