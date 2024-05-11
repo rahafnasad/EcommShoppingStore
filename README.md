@@ -18,6 +18,9 @@
 ![8](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/7a1cd8e9-ed18-44da-a0ed-3dfd33b923ad)
 
 #### - View the details of each product and view its rating, and it can be added to the shopping cart 📃
+![4](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/79e8cc0f-c717-427e-9967-c9f05f515144)
+
+![5](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/0dba84d7-ae3d-4711-b239-a607edbabe33)
 #### - Evaluate each product ⭐
 #### - The shopping cart contains all the products, along with their price, number, and total total 🛒💸💰
 #### - View all products and filter them according to price, name, and search ability 🛍️
