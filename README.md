@@ -29,6 +29,9 @@
 
 ![37](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/ee88f9b2-c805-43ed-ba4f-a16888cb9b22)
 #### - View all products and filter them according to price, name, and search ability 🛍️
+![7](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/bf9a5538-cf94-49f5-bf8e-c726ab52e136)
+![177](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/48f45d76-0808-43cb-a086-9f546fc9cdca)
+
 ## website execution 👀​
 
 
