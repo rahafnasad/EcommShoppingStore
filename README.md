@@ -25,8 +25,12 @@
 ![6](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/fe3d249b-8077-4c4f-af82-a3bed649fac8)
 
 #### - The shopping cart contains all the products, along with their price, number, and total total 🛒💸💰
+![36](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/17904630-c6be-4822-9e55-2a739b096e61)
+
+![37](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/ee88f9b2-c805-43ed-ba4f-a16888cb9b22)
 #### - View all products and filter them according to price, name, and search ability 🛍️
 ## website execution 👀​
+
 
 
 
