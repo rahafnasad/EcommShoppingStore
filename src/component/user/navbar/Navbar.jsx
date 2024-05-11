@@ -106,7 +106,7 @@ export default function Navbar() {
                     <>
                       <li>
                         <Link
-                          className="dropdown-item text-danger"
+                          className="dropdown-item "
                           to="/regiseter"
                         >
                           register

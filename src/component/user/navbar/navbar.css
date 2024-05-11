@@ -90,3 +90,10 @@ font-family: 'Josefin Sans', sans-serif;}
     letter-spacing: 1px;
     margin-left: 10px;
 }
+.dropdown-item:hover{
+    background-color: transparent;
+}
+.dropdown-item{
+color: rgb(95, 46, 0);
+}
+

@@ -94,8 +94,8 @@ padding-bottom: 30px;
     left: 0;
     width: 100%;
     height: 100%;
-    color: rgb(243, 207, 0);
-    -webkit-text-stroke:0vw rgb(243, 207, 0);
+    color: rgb(49, 28, 5);
+    -webkit-text-stroke:0vw #333;
 border-right: 2px solid rgb(97, 52, 0);
 overflow: hidden;
 animation: animate 6s linear infinite;
@@ -273,7 +273,7 @@ border: 1px solid #acacac;
 }
 .createdAt{
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .formCreateRevie {
@@ -313,6 +313,9 @@ top: 25px;
 }
 .revSub:hover{
     cursor: pointer;
+    background-color: rgb(49, 28, 5) ;
+    color: white;
+
 }
 .createeRe:hover,.start:hover{
     cursor: pointer;
@@ -386,11 +389,15 @@ height: 10px;}
     margin-right: 10px ;
 }
 
-.review h3{
-    font-size: 27px;
+.review .comment{
+    color: rgb(68, 34, 0) ;
+    font-size: 17px;
+    font-weight: 500;
     margin-top: 10px;
-    color: rgb(68, 34, 0);
 
+}
+.review h2 {
+    font-size: 22px;
 }
 .showw{
     height:15px;
@@ -484,4 +491,11 @@ width: 30%;
     font-size: 20px;
     padding-left: 20px;
 
+}
+.h-600{
+    height: 600px;
+}
+.s-16{
+    font-size: 18px;
+    font-weight: 400 !important;
 }

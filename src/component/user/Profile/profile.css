@@ -69,10 +69,12 @@ table {
   }
   .info img {
     border-radius: 50%;
+    width: 25%;
   }
   .info h3 ,.contact h3{
     color: rgb(95, 46, 0);
     font-family: 'Oswald', sans-serif;
 font-family: 'Poppins', sans-serif;
-font-weight: 400;
+font-weight: 400 !important;
+font-size: 25px;
   }

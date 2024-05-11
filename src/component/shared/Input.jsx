@@ -15,7 +15,6 @@ export default function Input({
   return (
     <>
       <div >
-        
         <input
           onBlur={onBlur}
           type={type}
@@ -27,7 +26,17 @@ export default function Input({
           placeholder={name}
         />
         {touched[name] && errors[name] && (
-          <p className=" text text-white mb-0 text-end">{errors[name]}</p>
+          
+          
+<div className=" d-none">
+{
+  document.getElementById(`${id}`).placeholder = `${errors[name]}`
+}
+
+</div>
+
+
+
         )}
       </div>
     </>
