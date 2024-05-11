@@ -12,8 +12,10 @@
 ![33](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/8fc66151-bbc6-4d74-baa9-4a07a8ee2b49)
 ![444](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/6a172f04-bb72-4e15-835b-db26e6988e20)
 
-#### - Show products 🛍️ 
+#### - View all categories 🛍️ 
 ![36](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/f96e8f06-6f2f-4af1-bc6b-474bbae9ca1f)
+#### - View all Products in category 🛍️ 
+![8](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/7a1cd8e9-ed18-44da-a0ed-3dfd33b923ad)
 
 #### - View the details of each product and view its rating, and it can be added to the shopping cart 📃
 #### - Evaluate each product ⭐
