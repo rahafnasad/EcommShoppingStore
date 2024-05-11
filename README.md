@@ -9,6 +9,9 @@
 ![22](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/70345ab2-4adf-481e-a13d-4f32519dbded)
 
 #### - Forgot password  👀🔐
+![33](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/8fc66151-bbc6-4d74-baa9-4a07a8ee2b49)
+![444](https://github.com/rahafnasad/EcommShoppingStore/assets/135382124/6a172f04-bb72-4e15-835b-db26e6988e20)
+
 #### - Show products 🛍️ 
 #### - View the details of each product and view its rating, and it can be added to the shopping cart 📃
 #### - Evaluate each product ⭐
